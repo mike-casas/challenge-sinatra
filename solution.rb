@@ -1,5 +1,9 @@
 require "sinatra"
 
 get '/' do
-request.env['HTTP_USER_AGENT']
+   if request.env['HTTP_PERMISO']=="soy-un-token-secreto"
+       "Si lo logramos!"
+      else
+      "sin permiso"
+   end
 end
